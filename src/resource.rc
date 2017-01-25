@@ -1,0 +1,48 @@
+/**
+ * @file resource.rc
+ * @desc Resource module file.
+ */
+
+#include <windows.h>
+
+VS_VERSION_INFO VERSIONINFO
+	FILEVERSION    1,0,0,0
+	PRODUCTVERSION 1,0,0,0
+	FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+#ifdef DEBUG
+	FILEFLAGS      VS_FF_DEBUG
+#else
+	FILEFLAGS      0
+#endif
+	FILEOS         VOS__WINDOWS32
+	FILETYPE       VFT_DLL
+	FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "CompanyName",      "\0"
+			VALUE "FileDescription",  "This is a hellolib.\0"
+			VALUE "FileVersion",      "1.0.0.0\0"
+			VALUE "LegalCopyright",   "\0"
+			VALUE "LegalTrademarks1", "\0"
+			VALUE "LegalTrademarks2", "\0"
+#ifdef DEBUG
+			VALUE "InternalName",     "hellolibd\0"
+			VALUE "OriginalFilename", "hellolibd.dll\0"
+			VALUE "ProductName",      "hellolibd.dll\0"
+#else
+			VALUE "InternalName",     "hellolib\0"
+			VALUE "OriginalFilename", "hellolib.dll\0"
+			VALUE "ProductName",      "hellolib.dll\0"
+#endif
+			VALUE "ProductVersion",   "1.0.0.0\0"
+		END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1252
+	END
+END
+
